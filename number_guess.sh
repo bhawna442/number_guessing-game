@@ -12,7 +12,7 @@ INPUT_NAME() {
   then
     INPUT_NAME
   else
-    USER_NAME=$(echo $($PSQL "SELECT username FROM users WHERE username='$NAME';") | sed 's/ //g')
+    USER_NAME=$(echo $($PSQL "select username from users where username='$NAME';") | sed 's/ //g')
     if [[ ! -z $USER_NAME ]]
     then
       #If that username has been used before, it should print Welcome back, <username>! You have played <games_played> games, and your best game took <best_game> guesses., 
